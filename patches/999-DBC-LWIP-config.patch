@@ -1,0 +1,18 @@
+diff --git a/connectivity/lwipstack/mbed_lib.json b/mbed-os/connectivity/lwipstack/mbed_lib.json
+index f6607b6..9553446 100644
+--- a/connectivity/lwipstack/mbed_lib.json
++++ b/connectivity/lwipstack/mbed_lib.json
+@@ -232,7 +232,12 @@
+             "mem-size": 16000
+         },
+         "GIGA": {
+-            "mem-size": 16000
++            "mem-size": 16000,
++            "lwip.memp-num-tcp-seg": 32,
++            "lwip.memp-num-tcpip-msg-inpkt": 16,
++            "lwip.socket-max": 12,
++            "lwip.tcp-mss": 1460,
++            "lwip.tcp-socket-max": 10
+         },
+         "FVP_MPS2_M3": {
+             "mem-size": 36560
