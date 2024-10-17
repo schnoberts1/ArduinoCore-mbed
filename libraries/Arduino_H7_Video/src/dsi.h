@@ -31,7 +31,7 @@ struct display_timing {
 extern DSI_HandleTypeDef dsi;
 
 /* Exported functions --------------------------------------------------------*/
-int			dsi_init(uint8_t bus, struct edid *edid, struct display_timing *dt);
+void		dsi_init(uint8_t bus, struct edid *edid, struct display_timing *dt);
 void		dsi_lcdClear(uint32_t color);
 void		dsi_lcdDrawImage(void *pSrc, void *pDst, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);
 void		dsi_lcdFillArea(void *pDst, uint32_t xSize, uint32_t ySize, uint32_t ColorMode);

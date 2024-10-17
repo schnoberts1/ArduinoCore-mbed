@@ -45,7 +45,7 @@ static void dsi_fillBuffer(uint32_t LayerIndex, void *pDst, uint32_t xSize, uint
 static void dsi_layerInit(uint16_t LayerIndex, uint32_t FB_Address);
 
 /* Functions -----------------------------------------------------------------*/
-int dsi_init(uint8_t bus, struct edid *edid, struct display_timing *dt) {
+void dsi_init(uint8_t bus, struct edid *edid, struct display_timing *dt) {
 #ifdef ARDUINO_GIGA
 	static const uint32_t DSI_PLLNDIV = 125;
 	static const uint32_t DSI_PLLIDF = DSI_PLL_IN_DIV4;
