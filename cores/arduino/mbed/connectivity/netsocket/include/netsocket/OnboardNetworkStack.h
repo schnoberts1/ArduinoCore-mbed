@@ -1,3 +1,5 @@
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /* mbed OS IP stack API
  * Copyright (c) 2015-2017 ARM Limited
  * SPDX-License-Identifier: Apache-2.0
@@ -204,3 +206,4 @@ public:
 };
 
 #endif /* MBED_IPSTACK_H */
+#pragma GCC diagnostic pop

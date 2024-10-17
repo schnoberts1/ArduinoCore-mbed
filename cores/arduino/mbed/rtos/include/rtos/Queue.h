@@ -1,3 +1,5 @@
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 /* mbed Microcontroller Library
  * Copyright (c) 2006-2019 ARM Limited
  * SPDX-License-Identifier: MIT
@@ -347,3 +349,4 @@ private:
 #endif
 
 #endif // QUEUE_H
+#pragma GCC diagnostic pop
