@@ -1,3 +1,5 @@
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /* mbed Microcontroller Library
  * Copyright (c) 2017 ARM Limited
  * SPDX-License-Identifier: Apache-2.0
@@ -256,3 +258,4 @@ using mbed::BD_ERROR_DEVICE_ERROR;
 #endif
 
 /** @}*/
+#pragma GCC diagnostic pop

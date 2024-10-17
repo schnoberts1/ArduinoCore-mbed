@@ -1,3 +1,5 @@
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /*
  * Copyright (c) 2015 ARM Limited
  * SPDX-License-Identifier: Apache-2.0
@@ -239,3 +241,4 @@ private:
 #endif
 
 /** @}*/
+#pragma GCC diagnostic pop

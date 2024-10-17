@@ -1,3 +1,5 @@
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /* mbed Microcontroller Library
  * Copyright (c) 2006-2019 ARM Limited
  * SPDX-License-Identifier: Apache-2.0
@@ -83,3 +85,4 @@ static inline void debug_if(int condition, const char *format, ...)
 
 /**@}*/
 
+#pragma GCC diagnostic pop

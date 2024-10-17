@@ -1,4 +1,5 @@
-
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /* NetworkStack
  * Copyright (c) 2015 ARM Limited
  * SPDX-License-Identifier: Apache-2.0
@@ -565,3 +566,5 @@ NetworkStack *nsapi_create_stack(IF *iface)
 #endif
 
 /** @} */
+
+#pragma GCC diagnostic pop
