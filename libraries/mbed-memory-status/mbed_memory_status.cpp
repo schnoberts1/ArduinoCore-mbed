@@ -40,6 +40,8 @@
 
 #include "Arduino.h"
 
+#include "mbed_version.h"
+
 // Critical sections header file renamed in mbed OS 5.4 release
 // See: https://github.com/ARMmbed/mbed-os/commit/aff49d8d1e3b5d4dc18286b0510336c36ae9603c
 
