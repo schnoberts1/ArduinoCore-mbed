@@ -41,10 +41,10 @@
 #include <platform/FileHandle.h>
 
 #define REDIRECT_STDOUT_TO(stream)    namespace mbed { \
-                                        FileHandle *mbed_override_console(int fd) { \
+                                        FileHandle *mbed_override_console(int ) { \
                                         return static_cast<mbed::FileHandle*>(stream); \
                                        } \
-                                        FileHandle *mbed_target_override_console(int fd) { \
+                                        FileHandle *mbed_target_override_console(int ) { \
                                         return static_cast<mbed::FileHandle*>(stream); \
                                        } \
                                       }
