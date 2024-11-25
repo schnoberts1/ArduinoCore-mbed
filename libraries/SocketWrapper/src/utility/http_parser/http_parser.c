@@ -1813,8 +1813,11 @@ reexecute:
             case 0:
               break;
 
+#pragma GCC diagnostic push          
+#pragma GCC diagnostic ignored "-Wimplicit-fallthrough"
             case 2:
               parser->upgrade = 1;
+#pragma GCC diagnostic pop
 
             case 1:
               parser->flags |= F_SKIPBODY;
@@ -2372,9 +2375,11 @@ http_parser_parse_url(const char *buf, uint32_t buflen, int is_connect,
         uf = UF_SCHEMA;
         break;
 
+#pragma GCC diagnostic push          
+#pragma GCC diagnostic ignored "-Wimplicit-fallthrough"
       case s_req_server_with_at:
         found_at = 1;
-
+#pragma GCC diagnostic pop
       /* FALLTROUGH */
       case s_req_server:
         uf = UF_HOST;

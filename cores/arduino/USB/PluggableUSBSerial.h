@@ -213,7 +213,7 @@ public:
     // Arduino APIs
     void begin(unsigned long);
 
-    void begin(unsigned long baudrate, uint16_t config) {
+    void begin(unsigned long baudrate, [[maybe_unused]] uint16_t config) {
         begin(baudrate);
     }
 

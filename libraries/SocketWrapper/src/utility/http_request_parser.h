@@ -65,11 +65,11 @@ public:
 
 private:
     // Member functions
-    int on_message_begin(http_parser* parser) {
+    int on_message_begin([[maybe_unused]] http_parser* parser) {
         return 0;
     }
 
-    int on_url(http_parser* parser, const char *at, uint32_t length) {
+    int on_url([[maybe_unused]] http_parser* parser, const char *at, uint32_t length) {
         string s(at, length);
         response->set_url(s);
         return 0;
@@ -81,13 +81,13 @@ private:
         return 0;
     }
 
-    int on_header_field(http_parser* parser, const char *at, uint32_t length) {
+    int on_header_field([[maybe_unused]] http_parser* parser, const char *at, uint32_t length) {
         string s(at, length);
         response->set_header_field(s);
         return 0;
     }
 
-    int on_header_value(http_parser* parser, const char *at, uint32_t length) {
+    int on_header_value([[maybe_unused]] http_parser* parser, const char *at, uint32_t length) {
         string s(at, length);
         response->set_header_value(s);
         return 0;
@@ -99,7 +99,7 @@ private:
         return 0;
     }
 
-    int on_body(http_parser* parser, const char *at, uint32_t length) {
+    int on_body([[maybe_unused]] http_parser* parser, const char *at, uint32_t length) {
         response->increase_body_length(length);
 
         if (body_callback) {
@@ -111,19 +111,19 @@ private:
         return 0;
     }
 
-    int on_message_complete(http_parser* parser) {
+    int on_message_complete([[maybe_unused]] http_parser* parser) {
         response->set_message_complete();
 
         return 0;
     }
 
-    int on_chunk_header(http_parser* parser) {
+    int on_chunk_header([[maybe_unused]] http_parser* parser) {
         response->set_chunked();
 
         return 0;
     }
 
-    int on_chunk_complete(http_parser* parser) {
+    int on_chunk_complete([[maybe_unused]] http_parser* parser) {
         return 0;
     }
 

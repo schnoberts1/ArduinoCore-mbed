@@ -126,7 +126,7 @@ void UART::begin(unsigned long baudrate) {
 	}
 }
 
-void UART::begin(unsigned long baudrate, uint16_t config, bool no_rx_pullup) {
+void UART::begin(unsigned long baudrate, uint16_t config, [[maybe_unused]] bool no_rx_pullup) {
 	begin(baudrate, config);
 #if defined(SET_GPIO_PULL_FUNCTION)
 	if (no_rx_pullup) {
@@ -238,7 +238,7 @@ size_t UART::write(const uint8_t* c, size_t len) {
 	return ret == -1 ? 0 : len;
 }
 
-void UART::block_tx(int _a) {
+void UART::block_tx(int) {
 	_block = false;
 }
 

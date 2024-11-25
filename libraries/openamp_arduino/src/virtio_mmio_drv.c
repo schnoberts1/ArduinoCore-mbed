@@ -260,7 +260,7 @@ struct virtqueue *virtio_mmio_setup_virtqueue(struct virtio_device *vdev,
 					      void *cb_arg,
 					      const char *vq_name)
 {
-	uint32_t maxq;
+	uint32_t maxq __attribute__ ((unused));
 	struct virtio_vring_info _vring_info = {0};
 	struct virtio_vring_info *vring_info = &_vring_info;
 	struct vring_alloc_info *vring_alloc_info;

@@ -148,7 +148,7 @@ public:
      *
      *  @return         Zero on success, negative error code on failure
      */
-    virtual int truncate(off_t length)
+    virtual int truncate([[maybe_unused]] off_t length)
     {
         return -EINVAL;
     }
@@ -189,7 +189,7 @@ public:
      *  @return             0 on success
      *  @return             Negative error code on failure
      */
-    virtual int enable_input(bool enabled)
+    virtual int enable_input([[maybe_unused]] bool enabled)
     {
         return -EINVAL;
     }
@@ -207,7 +207,7 @@ public:
      *  @return             0 on success
      *  @return             Negative error code on failure
      */
-    virtual int enable_output(bool enabled)
+    virtual int enable_output([[maybe_unused]] bool enabled)
     {
         return -EINVAL;
     }
@@ -222,7 +222,7 @@ public:
      *
      * @returns             bitmask of poll events that have occurred.
      */
-    virtual short poll(short events) const
+    virtual short poll([[maybe_unused]] short events) const
     {
         // Possible default for real files
         return POLLIN | POLLOUT;
@@ -267,7 +267,7 @@ public:
      *
      *  @param func     Function to call on state change
      */
-    virtual void sigio(Callback<void()> func)
+    virtual void sigio([[maybe_unused]] Callback<void()> func)
     {
         //Default for real files. Do nothing for real files.
     }

@@ -303,7 +303,7 @@ struct [[gnu::may_alias]] CallbackBase {
     }
 
     // Trivial destruction in storage
-    static void trivial_target_dtor(Store &p) noexcept
+    static void trivial_target_dtor([[maybe_unused]] Store &p) noexcept
     {
     }
 #endif

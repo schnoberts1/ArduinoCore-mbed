@@ -66,10 +66,10 @@ public:
          *                      For IPv4, this value will be ignored.
          * @return              NSAPI_ERROR_OK on success, or error code
          */
-        virtual nsapi_error_t set_ip_address(const char *ip,
-                                             const char *netmask,
-                                             const char *gw,
-                                             uint8_t ipv6_flag)
+        virtual nsapi_error_t set_ip_address([[maybe_unused]] const char *ip,
+                                             [[maybe_unused]] const char *netmask,
+                                             [[maybe_unused]] const char *gw,
+                                             [[maybe_unused]] uint8_t ipv6_flag)
         {
             return NSAPI_ERROR_UNSUPPORTED;
         }
@@ -122,7 +122,7 @@ public:
         * @return  string containing name of network interface for example "en0"
         */
 
-        virtual char *get_interface_name(char *buf)
+        virtual char *get_interface_name([[maybe_unused]] char *buf)
         {
             return NULL;
         };
@@ -137,7 +137,7 @@ public:
         virtual nsapi_error_t get_ip_address(SocketAddress *address) = 0;
 
         /** @copydoc NetworkStack::get_ipv6_link_local_address */
-        virtual nsapi_error_t get_ipv6_link_local_address(SocketAddress *address)
+        virtual nsapi_error_t get_ipv6_link_local_address([[maybe_unused]] SocketAddress *address)
         {
             return NSAPI_ERROR_UNSUPPORTED;
         }
@@ -162,38 +162,38 @@ public:
      */
     virtual nsapi_error_t add_ethernet_interface(EMAC &emac, bool default_if, Interface **interface_out, NetworkInterface *user_network_interface = NULL) = 0;
 
-    virtual nsapi_error_t add_ethernet_interface(EMAC &emac, bool default_if, Interface **interface_out, const uint8_t *mac_addr, NetworkInterface *user_network_interface = NULL)
+    virtual nsapi_error_t add_ethernet_interface([[maybe_unused]] EMAC &emac, [[maybe_unused]] bool default_if, [[maybe_unused]] Interface **interface_out, [[maybe_unused]] const uint8_t *mac_addr, [[maybe_unused]] NetworkInterface *user_network_interface = NULL)
 
     {
         return NSAPI_ERROR_UNSUPPORTED;
     }
 
-    virtual nsapi_error_t add_l3ip_interface(L3IP &l3ip, bool default_if, Interface **interface_out)
+    virtual nsapi_error_t add_l3ip_interface([[maybe_unused]] L3IP &l3ip, [[maybe_unused]] bool default_if, [[maybe_unused]] Interface **interface_out)
     {
         return NSAPI_ERROR_OK;
     };
 
-    virtual nsapi_error_t add_ppp_interface(PPP &ppp, bool default_if, Interface **interface_out)
+    virtual nsapi_error_t add_ppp_interface([[maybe_unused]] PPP &ppp, [[maybe_unused]] bool default_if, [[maybe_unused]] Interface **interface_out)
     {
         return NSAPI_ERROR_UNSUPPORTED;
     };
 
-    virtual nsapi_error_t remove_ethernet_interface(Interface **interface_out)
+    virtual nsapi_error_t remove_ethernet_interface([[maybe_unused]] Interface **interface_out)
     {
         return NSAPI_ERROR_OK;
     };
 
-    virtual nsapi_error_t remove_l3ip_interface(Interface **interface_out)
+    virtual nsapi_error_t remove_l3ip_interface([[maybe_unused]] Interface **interface_out)
     {
         return NSAPI_ERROR_OK;
     };
 
-    virtual nsapi_error_t remove_ppp_interface(Interface **interface_out)
+    virtual nsapi_error_t remove_ppp_interface([[maybe_unused]] Interface **interface_out)
     {
         return NSAPI_ERROR_UNSUPPORTED;
     };
 
-    virtual void set_default_interface(OnboardNetworkStack::Interface *interface)
+    virtual void set_default_interface([[maybe_unused]] OnboardNetworkStack::Interface *interface)
     {
     }
 

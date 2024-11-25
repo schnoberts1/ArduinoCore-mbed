@@ -74,7 +74,7 @@ int arduino::MbedUDP::endPacket() {
 
   size_t size = txBuffer.available();
   uint8_t buffer[size];
-  for (int i = 0; i < size; i++) {
+  for (unsigned i = 0u; i < size; i++) {
     buffer[i] = txBuffer.read_char();
   }
 
@@ -94,7 +94,7 @@ size_t arduino::MbedUDP::write(uint8_t byte) {
 
 // Write size bytes from buffer into the packet
 size_t arduino::MbedUDP::write(const uint8_t *buffer, size_t size) {
-  for (int i = 0; i<size; i++) {
+  for (unsigned i = 0u; i<size; i++) {
     if (txBuffer.availableForStore()) {
       txBuffer.store_char(buffer[i]);
     } else {

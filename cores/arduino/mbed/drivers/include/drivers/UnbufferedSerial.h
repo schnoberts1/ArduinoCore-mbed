@@ -109,7 +109,7 @@ public:
      *      SEEK_END to start from end of file
      *  @return         The new offset of the file, negative error code on failure
      */
-    off_t seek(off_t offset, int whence = SEEK_SET) override
+    off_t seek([[maybe_unused]] off_t offset, [[maybe_unused]] int whence = SEEK_SET) override
     {
         return -ESPIPE;
     }

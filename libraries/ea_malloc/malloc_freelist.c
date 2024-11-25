@@ -8,8 +8,9 @@
 #include <memory.h>
 #include <stdint.h>
 
+#ifndef __GNUC__
 #pragma mark - Definitions -
-
+#endif
 /**
  * Simple macro for making sure memory addresses are aligned
  * to the nearest power of two
@@ -39,17 +40,22 @@ typedef struct
 // We are enforcing a minimum allocation size of 32B.
 #define MIN_ALLOC_SZ ALLOC_HEADER_SZ + 32
 
+#ifndef __GNUC__
 #pragma mark - Prototypes -
+#endif
 
 static void defrag_free_list(void);
 
+#ifndef __GNUC__
 #pragma mark - Declarations -
+#endif
 
 // This macro simply declares and initializes our linked list
 static LIST_INIT(free_list);
 
+#ifndef __GNUC__
 #pragma mark - Private Functions -
-
+#endif
 /**
  * When we free, we can take our node and check to see if any memory blocks
  * can be combined into larger blocks.  This will help us fight against
@@ -76,7 +82,9 @@ void defrag_free_list(void)
 	}
 }
 
+#ifndef __GNUC__
 #pragma mark - APIs -
+#endif
 
 __attribute__((weak)) void malloc_init(void)
 {

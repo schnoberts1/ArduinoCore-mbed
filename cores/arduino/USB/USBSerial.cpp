@@ -41,7 +41,7 @@ static void waitForPortClose() {
     _ontouch1200bps_();
 }
 
-void usbPortChanged(int baud, int bits, int parity, int stop) {
+void usbPortChanged(int baud, int, int, int) {
     if (baud == 1200) {
         event.set(1);
     }

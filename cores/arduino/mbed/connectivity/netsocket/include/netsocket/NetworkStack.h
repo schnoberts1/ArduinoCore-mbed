@@ -414,9 +414,9 @@ protected:
      */
     virtual nsapi_size_or_error_t socket_sendto_control(nsapi_socket_t handle, const SocketAddress &address,
                                                         const void *data, nsapi_size_t size,
-                                                        nsapi_msghdr_t *control, nsapi_size_t control_size)
+                                                        nsapi_msghdr_t *control, [[maybe_unused]] nsapi_size_t control_size)
     {
-        if (control != NULL) {
+      if (control != NULL) {
             return NSAPI_ERROR_UNSUPPORTED;
         }
 
@@ -445,7 +445,7 @@ protected:
      */
     virtual nsapi_size_or_error_t socket_recvfrom_control(nsapi_socket_t handle, SocketAddress *address,
                                                           void *data, nsapi_size_t size,
-                                                          nsapi_msghdr_t *control, nsapi_size_t control_size)
+                                                          nsapi_msghdr_t *control, [[maybe_unused]] nsapi_size_t control_size)
     {
         if (control != NULL) {
             return NSAPI_ERROR_UNSUPPORTED;

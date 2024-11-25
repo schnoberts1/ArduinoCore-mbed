@@ -175,7 +175,7 @@ protected:
     * @param parity The parity
     * @param stop The number of stop bits (1 or 2)
     */
-    virtual void line_coding_changed(int baud, int bits, int parity, int stop) {};
+    virtual void line_coding_changed([[maybe_unused]] int baud, [[maybe_unused]] int bits, [[maybe_unused]] int parity, [[maybe_unused]] int stop) {};
 
     /*
      * Called when there is data that can be read

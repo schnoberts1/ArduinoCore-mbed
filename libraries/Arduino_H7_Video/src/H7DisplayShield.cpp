@@ -14,7 +14,7 @@ int GigaDisplayShieldClass::init(int edidmode) {
     return 0;
 }
 
-int GigaDisplayShieldClass::getEdidMode(int h, int v) {
+int GigaDisplayShieldClass::getEdidMode(int, int) {
     return EDID_MODE_480x800_60Hz;
 }
 

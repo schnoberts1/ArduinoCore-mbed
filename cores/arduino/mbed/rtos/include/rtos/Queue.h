@@ -72,7 +72,10 @@ public:
     */
     Queue()
     {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
         osMessageQueueAttr_t attr = { 0 };
+#pragma GCC diagnostic pop
         attr.mq_mem = _queue_mem;
         attr.mq_size = sizeof(_queue_mem);
         attr.cb_mem = &_obj_mem;

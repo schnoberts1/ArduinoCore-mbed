@@ -354,7 +354,7 @@ static void *rpmsg_virtio_get_tx_payload_buffer(struct rpmsg_device *rdev,
 	struct rpmsg_hdr *rp_hdr;
 	uint16_t idx;
 	int tick_count;
-	int status;
+	int status  __attribute__((unused));
 
 	/* Get the associated remote device for channel. */
 	rvdev = metal_container_of(rdev, struct rpmsg_virtio_device, rdev);
@@ -401,7 +401,7 @@ static int rpmsg_virtio_send_offchannel_nocopy(struct rpmsg_device *rdev,
 	struct rpmsg_hdr *hdr;
 	uint32_t buff_len;
 	uint16_t idx;
-	int status;
+	int status  __attribute__((unused));
 
 	/* Get the associated remote device for channel. */
 	rvdev = metal_container_of(rdev, struct rpmsg_virtio_device, rdev);
@@ -493,7 +493,7 @@ static int rpmsg_virtio_send_offchannel_raw(struct rpmsg_device *rdev,
 	struct metal_io_region *io;
 	uint32_t buff_len;
 	void *buffer;
-	int status;
+	int status __attribute__((unused));
 
 	/* Get the associated remote device for channel. */
 	rvdev = metal_container_of(rdev, struct rpmsg_virtio_device, rdev);
@@ -543,7 +543,7 @@ static void rpmsg_virtio_rx_callback(struct virtqueue *vq)
 	struct rpmsg_hdr *rp_hdr;
 	uint32_t len;
 	uint16_t idx;
-	int status;
+	int status  __attribute__((unused));
 
 	metal_mutex_acquire(&rdev->lock);
 
@@ -695,7 +695,7 @@ int rpmsg_init_vdev_with_config(struct rpmsg_virtio_device *rvdev,
 	struct rpmsg_device *rdev;
 	const char *vq_names[RPMSG_NUM_VRINGS];
 	vq_callback callback[RPMSG_NUM_VRINGS];
-	int status;
+	int status  __attribute__((unused));
 	unsigned int i, role;
 
 	if (!rvdev || !vdev || !shm_io)

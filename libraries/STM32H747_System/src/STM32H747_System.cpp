@@ -6,7 +6,6 @@
 extern RTC_HandleTypeDef RTCHandle;
 
 uint8_t STM32H747::readReg(uint8_t subAddress) {
-  char response = 0xFF;
   Wire1.beginTransmission(PMIC_ADDRESS);
   Wire1.write(subAddress);
   Wire1.endTransmission(false);
@@ -42,9 +41,12 @@ reset_reason_t STM32H747::getResetReason() {
  * If lowspeed = false: f = 400MHz
 */
 bool STM32H747::useInternalOscillator(bool lowspeed) {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+  [[maybe_unused]] RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+#pragma GCC diagnostic pop
 
   // If we are reconfiguring the clock, select CSI as system clock source to allow modification of the PLL configuration 
   if (__HAL_RCC_GET_PLL_OSCSOURCE() == RCC_PLLSOURCE_HSE) {

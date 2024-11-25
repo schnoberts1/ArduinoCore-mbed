@@ -45,7 +45,7 @@ static void dsi_fillBuffer(uint32_t LayerIndex, void *pDst, uint32_t xSize, uint
 static void dsi_layerInit(uint16_t LayerIndex, uint32_t FB_Address);
 
 /* Functions -----------------------------------------------------------------*/
-void dsi_init(uint8_t bus, struct edid *edid, struct display_timing *dt) {
+void dsi_init(uint8_t, struct edid *, struct display_timing *dt) {
 #ifdef ARDUINO_GIGA
 	static const uint32_t DSI_PLLNDIV = 125;
 	static const uint32_t DSI_PLLIDF = DSI_PLL_IN_DIV4;
@@ -383,7 +383,7 @@ void dsi_layerInit(uint16_t LayerIndex, uint32_t FB_Address) {
 	HAL_LTDC_ConfigLayer(&ltdc, &Layercfg, LayerIndex);
 }
 
-void dsi_fillBuffer(uint32_t LayerIndex, void *pDst, uint32_t xSize, uint32_t ySize, uint32_t OffLine, uint32_t ColorIndex) {
+void dsi_fillBuffer(uint32_t, void *pDst, uint32_t xSize, uint32_t ySize, uint32_t OffLine, uint32_t ColorIndex) {
 	/* Register to memory mode with ARGB8888 as color Mode */
 	dma2d.Init.Mode         = DMA2D_R2M;
 	dma2d.Init.ColorMode    = DMA2D_OUTPUT_RGB565;	//DMA2D_OUTPUT_ARGB8888
@@ -408,7 +408,7 @@ extern "C" void LTDC_IRQHandler(void) {
 }
 
 /* Reload LTDC event callback */
-extern "C" void HAL_LTDC_ReloadEventCallback(LTDC_HandleTypeDef *hltdc) {
+extern "C" void HAL_LTDC_ReloadEventCallback(LTDC_HandleTypeDef *) {
   reloadLTDC_status = 1;
 }
 

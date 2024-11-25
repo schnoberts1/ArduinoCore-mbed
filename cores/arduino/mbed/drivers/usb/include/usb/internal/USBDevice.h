@@ -339,7 +339,7 @@ protected:
     *
     * Warning: Called in ISR context
     */
-    virtual void callback_power(bool powered)
+    virtual void callback_power([[maybe_unused]] bool powered)
     {
 
     }
@@ -354,7 +354,7 @@ protected:
     *
     * Warning: Called in ISR context
     */
-    virtual void callback_sof(int frame_number)
+    virtual void callback_sof([[maybe_unused]] int frame_number)
     {
 
     }

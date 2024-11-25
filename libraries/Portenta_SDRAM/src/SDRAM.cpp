@@ -3,7 +3,7 @@ extern "C" {
 	#include "ram_internal.h"
 }
 
-static void MPU_Config() {
+[[maybe_unused]] static void MPU_Config() {
     MPU_Region_InitTypeDef MPU_InitStruct;
 
     /* Disable the MPU */

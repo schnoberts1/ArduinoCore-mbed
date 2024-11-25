@@ -64,7 +64,7 @@ public:
         }
     }
 
-    char* build(const void* body, uint32_t body_size, uint32_t &size, bool skip_content_length = false) {
+    char* build(const void* body, uint32_t body_size, uint32_t &size, [[maybe_unused]] bool skip_content_length = false) {
         const char* method_str = http_method_str(method);
 
         bool is_chunked = has_header("Transfer-Encoding", "chunked");

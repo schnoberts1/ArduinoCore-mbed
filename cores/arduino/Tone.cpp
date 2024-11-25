@@ -56,7 +56,7 @@ void tone(uint8_t pin, unsigned int frequency, unsigned long duration) {
 	active_tone = t;
 };
 
-void noTone(uint8_t pin) {
+void noTone(uint8_t) {
 	if (active_tone) {
 		active_tone->stop();
 		delete active_tone;

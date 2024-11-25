@@ -37,7 +37,7 @@
 #include "metal/io.h"
 #include "metal/sys.h"
 
-void sys_irq_restore_enable(unsigned int flags)
+void sys_irq_restore_enable(unsigned int flags __attribute__((unused)))
 {
 }
 

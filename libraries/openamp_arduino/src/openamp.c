@@ -151,7 +151,10 @@ void OPENAMP_DeInit()
 
 void OPENAMP_init_ept(struct rpmsg_endpoint *ept)
 {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wimplicit-function-declaration"
   rpmsg_init_ept(ept, "", RPMSG_ADDR_ANY, RPMSG_ADDR_ANY, NULL, NULL);
+#pragma GCC diagnostic pop  
 }
 
 int OPENAMP_create_endpoint(struct rpmsg_endpoint *ept, const char *name,

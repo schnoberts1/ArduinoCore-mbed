@@ -127,7 +127,7 @@ int arduino::WiFiClass::beginAP(const char* ssid, const char* passphrase, uint8_
   return _currentNetworkStatus;
 }
 
-void* arduino::WiFiClass::handleAPEvents(whd_interface_t ifp, const whd_event_header_t* event_header, const uint8_t* event_data, void* handler_user_data) {
+void* arduino::WiFiClass::handleAPEvents(whd_interface_t ifp, const whd_event_header_t* event_header, const uint8_t*, void* handler_user_data) {
   if (event_header->event_type == WLC_E_ASSOC_IND) {
     WiFi._currentNetworkStatus = WL_AP_CONNECTED;
   } else if (event_header->event_type == WLC_E_DISASSOC_IND) {
@@ -288,7 +288,7 @@ unsigned long arduino::WiFiClass::getTime() {
   return 0;
 }
 
-void arduino::WiFiClass::statusCallback(nsapi_event_t status, intptr_t param)
+void arduino::WiFiClass::statusCallback(nsapi_event_t, intptr_t param)
 {
   if (((param == NSAPI_STATUS_DISCONNECTED) ||
        (param == NSAPI_STATUS_CONNECTING)) &&

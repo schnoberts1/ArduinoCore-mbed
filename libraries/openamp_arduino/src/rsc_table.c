@@ -122,7 +122,10 @@ void resource_table_init(int RPMsgRole, void **table_ptr, int *length)
      * Currently the GCC linker doesn't initialize the resource_table global variable at startup
      * it is done here by the CM7 application.
      */
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
 	memset(&resource_table, '\0', sizeof(struct shared_resource_table));
+#pragma GCC diagnostic pop
 	resource_table.num = 1;
 	resource_table.version = 1;
 	resource_table.offset[0] = offsetof(struct shared_resource_table, vdev);
@@ -151,7 +154,10 @@ void resource_table_init(int RPMsgRole, void **table_ptr, int *length)
 #endif
 #endif
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdiscarded-qualifiers"
   (void)RPMsgRole;
   *length = sizeof(resource_table);
   *table_ptr = &resource_table;
+#pragma GCC diagnostic pop
 }

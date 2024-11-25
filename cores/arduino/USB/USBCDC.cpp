@@ -148,13 +148,13 @@ public:
     USBCDC *serial;
 };
 
-USBCDC::USBCDC(bool connect_blocking, const char* name, uint16_t vendor_id, uint16_t product_id, uint16_t product_release)
+USBCDC::USBCDC(bool, const char* name, uint16_t, uint16_t, uint16_t)
     : internal::PluggableUSBModule(2), extraDescriptor(name)
 {
     PluggableUSBD().plug(this);
 }
 
-USBCDC::USBCDC(USBPhy *phy, const char* name, uint16_t vendor_id, uint16_t product_id, uint16_t product_release)
+USBCDC::USBCDC(USBPhy* , const char* name, uint16_t, uint16_t, uint16_t)
     : internal::PluggableUSBModule(2), extraDescriptor(name)
 {
     PluggableUSBD().plug(this);
@@ -283,7 +283,7 @@ bool USBCDC::callback_request_xfer_done(const USBDevice::setup_packet_t *setup, 
     return success;
 }
 
-bool USBCDC::callback_set_configuration(uint8_t configuration)
+bool USBCDC::callback_set_configuration(uint8_t)
 {
     assert_locked();
     /* Called in ISR context */
@@ -302,7 +302,7 @@ bool USBCDC::callback_set_configuration(uint8_t configuration)
     return ret;
 }
 
-void USBCDC::callback_set_interface(uint16_t interface, uint8_t alternate)
+void USBCDC::callback_set_interface(uint16_t, uint8_t)
 {
     assert_locked();
 }

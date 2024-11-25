@@ -67,11 +67,11 @@ void arduino::MbedSPI::transfer(void *buf, size_t count) {
     dev->obj->write((const char*)buf, count, (char*)buf, count);
 }
 
-void arduino::MbedSPI::usingInterrupt(int interruptNumber) {
+void arduino::MbedSPI::usingInterrupt(int) {
 
 }
 
-void arduino::MbedSPI::notUsingInterrupt(int interruptNumber) {
+void arduino::MbedSPI::notUsingInterrupt(int) {
 
 }
 

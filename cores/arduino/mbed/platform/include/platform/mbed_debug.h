@@ -41,7 +41,7 @@ static inline void debug_if(int condition, const char *format, ...) MBED_PRINTF(
  *
  * @param format printf-style format string, followed by variables
  */
-static inline void debug(const char *format, ...)
+static inline void debug([[maybe_unused]] const char *format, ...)
 {
 #if DEVICE_STDIO_MESSAGES && !defined(NDEBUG)
     va_list args;
@@ -60,7 +60,7 @@ static inline void debug(const char *format, ...)
  * @param condition output only if condition is true (!= 0)
  * @param format printf-style format string, followed by variables
  */
-static inline void debug_if(int condition, const char *format, ...)
+static inline void debug_if([[maybe_unused]] int condition, [[maybe_unused]] const char *format, ...)
 {
 #if DEVICE_STDIO_MESSAGES && !defined(NDEBUG)
     if (condition) {

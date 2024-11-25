@@ -129,10 +129,10 @@ static int
 detailed_cvt_descriptor(unsigned char *x, int first)
 {
 	const unsigned char empty[3] = { 0, 0, 0 };
-	static const char *names[] = { "50", "60", "75", "85" };
-	int width = 0, height = 0;
+	static const char *names[] __attribute__((unused)) = { "50", "60", "75", "85" };
+	int width __attribute__((unused)) = 0, height = 0;
 	int valid = 1;
-	int fifty = 0, sixty = 0, seventyfive = 0, eightyfive = 0, reduced = 0;
+	int fifty __attribute__((unused)) = 0, sixty __attribute__((unused)) = 0, seventyfive __attribute__((unused)) = 0, eightyfive __attribute__((unused)) = 0, reduced __attribute__((unused)) = 0;
 
 	if (!first && !memcmp(x, empty, 3))
 		return valid;
@@ -644,8 +644,8 @@ do_checksum(unsigned char *x)
 
 /* CEA extension */
 
-static const char *
-audio_format(unsigned char x)
+__attribute__((unused)) static const char *
+audio_format (unsigned char x __attribute__((unused))) 
 {
 	switch (x) {
 	case 0: return "RESERVED";
@@ -922,8 +922,8 @@ cea_block(struct edid *out, unsigned char *x)
 		break;
 	default:
 	{
-		int tag = (*x & 0xe0) >> 5;
-		int length = *x & 0x1f;
+		int tag __attribute__((unused)) = (*x & 0xe0) >> 5;
+		int length __attribute__((unused)) = *x & 0x1f;
 		EDIDDEBUG(
 			"  Unknown tag %d, length %d (raw %02x)\n",
 			tag, length, *x);
@@ -991,7 +991,7 @@ parse_cea(struct edid *out, unsigned char *x, struct edid_context *c)
 /* generic extension code */
 
 static void
-extension_version(struct edid *out, unsigned char *x)
+extension_version(struct edid *out __attribute__((unused)), unsigned char *x __attribute__((unused)))
 {
 	EDIDDEBUG( "Extension version: %d\n", x[1]);
 }
@@ -1061,7 +1061,7 @@ static const struct {
 	{1152, 870, 75},
 };
 
-static void print_subsection(const char *name, unsigned char *edid, int start,
+static void print_subsection(const char *name , unsigned char *edid __attribute__((unused)), int start,
 			     int end)
 {
 	int i;
@@ -1339,12 +1339,12 @@ int decode_edid(unsigned char *edid, int size, struct edid *out)
 		       edid[0x15], edid[0x16]);
 	} else if (c.claims_one_point_four && (edid[0x15] || edid[0x16])) {
 		if (edid[0x15]) { /* edid[0x15] != 0 && edid[0x16] == 0 */
-			unsigned int ratio = 100000/(edid[0x15] + 99);
+			unsigned int ratio __attribute__((unused)) = 100000/(edid[0x15] + 99);
 			EDIDDEBUG(
 				"Aspect ratio is %u.%03u (landscape)\n",
 				ratio / 1000, ratio % 1000);
 		} else { /* edid[0x15] == 0 && edid[0x16] != 0 */
-			unsigned int ratio = 100000/(edid[0x16] + 99);
+			unsigned int ratio __attribute__((unused)) = 100000/(edid[0x16] + 99);
 			EDIDDEBUG(
 				"Aspect ratio is %u.%03u (portrait)\n",
 				ratio / 1000, ratio % 1000);

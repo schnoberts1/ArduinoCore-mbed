@@ -118,7 +118,7 @@ public:
      *  @param size     Size to erase in bytes, must be a multiple of the erase block size
      *  @return         0 on success or a negative error code on failure
      */
-    virtual int erase(bd_addr_t addr, bd_size_t size)
+    virtual int erase([[maybe_unused]] bd_addr_t addr, [[maybe_unused]] bd_size_t size)
     {
         return 0;
     }
@@ -134,7 +134,7 @@ public:
      *  @param size     Size to mark as unused in bytes, must be a multiple of the erase block size
      *  @return         0 on success or a negative error code on failure
      */
-    virtual int trim(bd_addr_t addr, bd_size_t size)
+    virtual int trim([[maybe_unused]] bd_addr_t addr, [[maybe_unused]] bd_size_t size)
     {
         return 0;
     }
@@ -168,7 +168,7 @@ public:
      *  @return         Size of an erasable block in bytes
      *  @note Must be a multiple of the program size
      */
-    virtual bd_size_t get_erase_size(bd_addr_t addr) const
+    virtual bd_size_t get_erase_size([[maybe_unused]] bd_addr_t addr) const
     {
         return get_erase_size();
     }

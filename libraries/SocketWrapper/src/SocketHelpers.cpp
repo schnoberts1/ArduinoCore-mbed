@@ -189,7 +189,7 @@ int MbedSocketClass::download(const char* url, bool const is_https, mbed::Callba
 
   // find the header containing the "Content-Length" value and return that
   header_fields = rsp->get_headers_fields();
-  for(int i=0; i<header_fields.size(); i++) {
+  for(unsigned i=0u; i<header_fields.size(); i++) {
 
     if(strcmp(header_fields[i]->c_str(), "Content-Length") == 0) {
       res = std::stoi(*rsp->get_headers_values()[i]);

@@ -70,8 +70,9 @@ typedef struct ll_head
 	struct ll_head* prev;
 } ll_t;
 
+#ifndef __GNUC__
 #pragma mark - List Manipulation -
-
+#endif
 /// @name Get Containers
 /// @{
 
@@ -136,8 +137,9 @@ typedef struct ll_head
 /// @}
 // Get containers
 
+#ifndef __GNUC__
 #pragma mark - Foreach -
-
+#endif
 /// @name Foreach Operations
 /// @{
 
@@ -269,8 +271,9 @@ typedef struct ll_head
 /// @}
 // End foreach
 
+#ifndef __GNUC__
 #pragma mark - Init -
-
+#endif
 /// @name Initialization
 /// @{
 
@@ -293,8 +296,9 @@ typedef struct ll_head
 
 /// @}
 
+#ifndef __GNUC__
 #pragma mark - Add -
-
+#endif
 /// @name Addition
 /// @{
 
@@ -328,8 +332,9 @@ static inline void list_add_tail(struct ll_head* n, struct ll_head* head)
 
 /// @}
 
+#ifndef __GNUC__
 #pragma mark - Delete -
-
+#endif
 /// @name Deletion
 /// @{
 

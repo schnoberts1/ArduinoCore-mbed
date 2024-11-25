@@ -272,7 +272,7 @@ const uint8_t *arduino::PluggableUSBDevice::string_iserial_desc()
 #define USB_MAX_POWER (100)
 #endif
 
-const uint8_t *arduino::PluggableUSBDevice::configuration_desc(uint8_t index)
+const uint8_t *arduino::PluggableUSBDevice::configuration_desc(uint8_t)
 {
     #define TOTAL_DESCRIPTOR_LENGTH 0xFFFF
     // Create a huge configuration descriptor using all the pluggable ones
