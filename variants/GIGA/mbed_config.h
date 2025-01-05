@@ -383,7 +383,7 @@
 #define MBED_CONF_TARGET_LPUART_CLOCK_SOURCE                                    USE_LPUART_CLK_HSI                                                                               // set by target:GIGA
 #define MBED_CONF_TARGET_LSE_AVAILABLE                                          1                                                                                                // set by target:GIGA
 #define MBED_CONF_TARGET_LSE_BYPASS                                             0                                                                                                // set by target:GIGA
-#define MBED_CONF_TARGET_LSE_DRIVE_LOAD_LEVEL                                   RCC_LSEDRIVE_LOW                                                                                 // set by target:MCU_STM32H7
+#define MBED_CONF_TARGET_LSE_DRIVE_LOAD_LEVEL                                   RCC_LSEDRIVE_HIGH                                                                                // set by target:MCU_STM32H7
 #define MBED_CONF_TARGET_MPU_ROM_END                                            0x0fffffff                                                                                       // set by target:Target
 #define MBED_CONF_TARGET_NETWORK_DEFAULT_INTERFACE_TYPE                         WIFI                                                                                             // set by target:GIGA
 #define MBED_CONF_TARGET_RTC_CLOCK_SOURCE                                       USE_RTC_CLK_LSE_OR_LSI                                                                           // set by target:MCU_STM32

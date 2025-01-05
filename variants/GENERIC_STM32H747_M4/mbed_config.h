@@ -381,7 +381,7 @@
 #define MBED_CONF_TARGET_LPTICKER_LPTIM_CLOCK                                   1                                                                                                // set by target:MCU_STM32
 #define MBED_CONF_TARGET_LPUART_CLOCK_SOURCE                                    USE_LPUART_CLK_LSE|USE_LPUART_CLK_PCLK1|USE_LPUART_CLK_PCLK3                                     // set by target:MCU_STM32
 #define MBED_CONF_TARGET_LSE_AVAILABLE                                          0                                                                                                // set by application[*]
-#define MBED_CONF_TARGET_LSE_DRIVE_LOAD_LEVEL                                   RCC_LSEDRIVE_LOW                                                                                 // set by target:MCU_STM32H7
+#define MBED_CONF_TARGET_LSE_DRIVE_LOAD_LEVEL                                   RCC_LSEDRIVE_HIGH                                                                                // set by target:MCU_STM32H7
 #define MBED_CONF_TARGET_MPU_ROM_END                                            0x0fffffff                                                                                       // set by target:Target
 #define MBED_CONF_TARGET_RTC_CLOCK_SOURCE                                       USE_RTC_CLK_LSE_OR_LSI                                                                           // set by target:MCU_STM32
 #define MBED_CONF_TARGET_SYSTEM_POWER_SUPPLY                                    PWR_LDO_SUPPLY                                                                                   // set by target:GENERIC_STM32H747_M4

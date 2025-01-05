@@ -1,0 +1,13 @@
+index 83fa8c9..4ede4cf 100644
+--- a/targets/targets.json
++++ b/targets/targets.json
+@@ -3192,7 +3192,7 @@
+             },
+             "lse_drive_load_level": {
+                 "help": "HSE drive load level  RCC_LSEDRIVE_LOW | RCC_LSEDRIVE_MEDIUMLOW | RCC_LSEDRIVE_MEDIUMHIGH | RCC_LSEDRIVE_HIGH",
+-                "value": "RCC_LSEDRIVE_LOW"
++                "value": "RCC_LSEDRIVE_HIGH"
+             },
+             "system_power_supply": {
+                 "expected_value1": "PWR_LDO_SUPPLY | PWR_DIRECT_SMPS_SUPPLY",
+
